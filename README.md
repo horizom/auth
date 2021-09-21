@@ -144,8 +144,6 @@ During the lifetime of a session, some user data may be changed remotely, either
 
 If all your database tables need a common database name, schema name, or other qualifier that must be specified explicitly, you can optionally pass that qualifier to the constructor as the sixth parameter, which is named `$dbSchema`.
 
-If you want to use a `PdoDatabase` instance (e.g. `$db`) independently as well, please refer to the [documentation of the database library](https://github.com/delight-im/PHP-DB).
-
 ### Registration (sign up)
 
 ```php
@@ -156,16 +154,16 @@ try {
 
     echo 'We have signed up a new user with the ID ' . $userId;
 }
-catch (\Horizom\Auth\InvalidEmailException $e) {
+catch (\Horizom\Auth\Exception\InvalidEmailException $e) {
     die('Invalid email address');
 }
-catch (\Horizom\Auth\InvalidPasswordException $e) {
+catch (\Horizom\Auth\Exception\InvalidPasswordException $e) {
     die('Invalid password');
 }
-catch (\Horizom\Auth\UserAlreadyExistsException $e) {
+catch (\Horizom\Auth\Exception\UserAlreadyExistsException $e) {
     die('User already exists');
 }
-catch (\Horizom\Auth\TooManyRequestsException $e) {
+catch (\Horizom\Auth\Exception\TooManyRequestsException $e) {
     die('Too many requests');
 }
 ```
@@ -466,11 +464,9 @@ try {
     });
 
     echo 'The user may now respond to the confirmation request (usually by clicking a link)';
-}
-catch (\Horizom\Auth\Exception\ConfirmationRequestNotFound $e) {
+} catch (\Horizom\Auth\Exception\ConfirmationRequestNotFound $e) {
     die('No earlier request found that could be re-sent');
-}
-catch (\Horizom\Auth\Exception\TooManyRequestsException $e) {
+} catch (\Horizom\Auth\Exception\TooManyRequestsException $e) {
     die('There have been too many requests -- try again later');
 }
 ```
@@ -484,11 +480,9 @@ try {
     });
 
     echo 'The user may now respond to the confirmation request (usually by clicking a link)';
-}
-catch (\Horizom\Auth\Exception\ConfirmationRequestNotFound $e) {
+} catch (\Horizom\Auth\Exception\ConfirmationRequestNotFound $e) {
     die('No earlier request found that could be re-sent');
-}
-catch (\Horizom\Auth\Exception\TooManyRequestsException $e) {
+} catch (\Horizom\Auth\Exception\TooManyRequestsException $e) {
     die('There have been too many requests -- try again later');
 }
 ```
@@ -512,8 +506,7 @@ $auth->logOut();
 
 try {
     $auth->logOutEverywhereElse();
-}
-catch (\Horizom\Auth\Exception\NotLoggedInException $e) {
+} catch (\Horizom\Auth\Exception\NotLoggedInException $e) {
     die('Not logged in');
 }
 
@@ -521,8 +514,7 @@ catch (\Horizom\Auth\Exception\NotLoggedInException $e) {
 
 try {
     $auth->logOutEverywhere();
-}
-catch (\Horizom\Auth\Exception\NotLoggedInException $e) {
+} catch (\Horizom\Auth\Exception\NotLoggedInException $e) {
     die('Not logged in');
 }
 ```
