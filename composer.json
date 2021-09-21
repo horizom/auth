@@ -1,0 +1,46 @@
+{
+  "name": "horizom/auth",
+  "description": "Authentication for PHP. Simple, lightweight and secure.",
+  "version": "1.0.0",
+  "keywords": [
+    "horizon",
+    "horizom",
+    "auth",
+    "authentication",
+    "security",
+    "login",
+    "php"
+  ],
+  "license": "MIT",
+  "homepage": "https://horizom.github.io",
+  "support": {
+    "issues": "https://github.com/horizom/auth/issues"
+  },
+  "authors": [
+    {
+      "name": "Horizom Team",
+      "email": "horizom.team@gmail.com"
+    },
+    {
+      "name": "Codec Solutions",
+      "email": "infos@codecci.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.6.0",
+    "ext-openssl": "*",
+    "delight-im/base64": "^1.0",
+    "delight-im/cookie": "^3.1",
+    "delight-im/db": "^1.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Horizom\\Auth\\": "src/"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}

@@ -1,0 +1,10 @@
+.DS_Store
+
+/.vscode/*
+/vendor/*
+/tests/*
+/.htaccess
+
+.env
+.env.backup
+npm-debug.log
