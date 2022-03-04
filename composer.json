@@ -1,7 +1,7 @@
 {
   "name": "horizom/auth",
   "description": "Authentication for PHP. Simple, lightweight and secure.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "keywords": [
     "horizon",
     "horizom",
