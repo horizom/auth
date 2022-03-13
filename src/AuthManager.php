@@ -23,7 +23,7 @@ use Horizom\Auth\Exception\DuplicateUsernameException;
  *
  * @internal
  */
-abstract class UserManager
+abstract class AuthManager
 {
 
     /** @var string session field for whether the client is currently signed in */
@@ -51,8 +51,9 @@ abstract class UserManager
     protected $dbSchema;
     /** @var string the prefix for the names of all database tables used by this component */
     protected $dbTablePrefix;
+
     /** @var array auth database table stack */
-    private static $tables = [
+    protected static $tables = [
         'users' => 'users',
         'confirmations' => 'users_confirmations',
         'remembered' => 'users_remembered',
@@ -61,7 +62,7 @@ abstract class UserManager
     ];
 
     /** @var string password hash algorithm */
-    private $passwordHashAlgo = PASSWORD_DEFAULT;
+    protected $passwordHashAlgo = PASSWORD_DEFAULT;
 
     /**
      * @param PdoDatabase|PdoDsn|\PDO $databaseConnection the database connection to operate on

@@ -31,7 +31,7 @@ use Horizom\Auth\Exception\DuplicateUsernameException;
 use Horizom\Auth\Exception\InvalidSelectorTokenPairException;
 
 /** Component that provides all features and utilities for secure authentication of individual users */
-final class Auth extends UserManager
+final class Auth extends AuthManager
 {
     const COOKIE_PREFIXES = [Cookie::PREFIX_SECURE, Cookie::PREFIX_HOST];
     const COOKIE_CONTENT_SEPARATOR = '~';
@@ -44,14 +44,6 @@ final class Auth extends UserManager
     private $sessionResyncInterval;
     /** @var string the name of the cookie used for the 'remember me' feature */
     private $rememberCookieName;
-    /** @var array auth database table stack */
-    private static $tables = [
-        'users' => 'users',
-        'confirmations' => 'users_confirmations',
-        'remembered' => 'users_remembered',
-        'resets' => 'users_resets',
-        'throttling' => 'users_throttling',
-    ];
 
     /**
      * @param PdoDatabase|PdoDsn|\PDO $databaseConnection the database connection to operate on

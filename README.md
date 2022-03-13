@@ -130,6 +130,9 @@ $db = new \PDO('pgsql:dbname=my-database;host=localhost;port=5432', 'my-username
 $db = new \PDO('sqlite:../Databases/my-database.sqlite');
 
 $auth = new \Horizom\Auth\Auth($db);
+
+// Set password hashing algorithm
+$auth->setPasswordHashAlgorithm(PASSWORD_DEFAULT);
 ```
 
 If you have an open `PDO` connection already, just re-use it. The database user (e.g. `my-username`) needs at least the privileges `SELECT`, `INSERT`, `UPDATE` and `DELETE` for the tables used by this library (or their parent database).
