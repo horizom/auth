@@ -1,7 +1,9 @@
 {
   "name": "horizom/auth",
   "description": "Authentication for PHP. Simple, lightweight and secure.",
-  "version": "1.1.0",
+  "type": "library",
+  "license": "MIT",
+  "homepage": "https://horizom.github.io",
   "keywords": [
     "horizon",
     "horizom",
@@ -11,10 +13,9 @@
     "login",
     "php"
   ],
-  "license": "MIT",
-  "homepage": "https://horizom.github.io",
   "support": {
-    "issues": "https://github.com/horizom/auth/issues"
+    "issues": "https://github.com/horizom/horizom/issues",
+    "source": "https://github.com/horizom/horizom"
   },
   "authors": [
     {
@@ -27,7 +28,7 @@
     }
   ],
   "require": {
-    "php": ">=5.6.0",
+    "php": "^8.0",
     "ext-openssl": "*",
     "delight-im/base64": "^1.0",
     "delight-im/cookie": "^3.1",
@@ -35,7 +36,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Horizom\\Auth\\": "src/"
+      "Horizom\\Auth\\": ""
     }
   },
   "config": {
