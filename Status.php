@@ -2,7 +2,7 @@
 
 namespace Horizom\Auth;
 
-final class Status
+class Status
 {
 
 	const NORMAL = 0;

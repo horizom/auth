@@ -16,7 +16,7 @@ use Horizom\Auth\Exception\UserAlreadyExistsException;
 use Horizom\Auth\Exception\DuplicateUsernameException;
 
 /** Component that can be used for administrative tasks by privileged and authorized users */
-final class Administration extends AuthManager
+class Administration extends AuthManager
 {
 	/**
 	 * @param PdoDatabase|PdoDsn|\PDO $databaseConnection the database connection to operate on

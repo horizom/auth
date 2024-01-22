@@ -2,7 +2,7 @@
 
 namespace Horizom\Auth;
 
-final class Role
+class Role
 {
 
 	const ADMIN = 1;

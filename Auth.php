@@ -30,8 +30,10 @@ use Horizom\Auth\Exception\UserAlreadyExistsException;
 use Horizom\Auth\Exception\DuplicateUsernameException;
 use Horizom\Auth\Exception\InvalidSelectorTokenPairException;
 
-/** Component that provides all features and utilities for secure authentication of individual users */
-final class Auth extends AuthManager
+/**
+ * Component that provides all features and utilities for secure authentication of individual users
+ */
+class Auth extends AuthManager
 {
     const COOKIE_PREFIXES = [Cookie::PREFIX_SECURE, Cookie::PREFIX_HOST];
     const COOKIE_CONTENT_SEPARATOR = '~';
